@@ -123,6 +123,18 @@ class Search_fields {
 					$field_sql = 'wt.title';
 				}
 				
+				// search channel status
+				else if ($field_name =="status") 
+				{
+					$field_sql = 'wt.status';
+				}
+				
+				// search entry_id
+				else if ($field_name =="entry_id") 
+				{
+					$field_sql = 'wt.entry_id';
+				}
+				
 				// search category titles 
 				else if ($field_name =="cat_name") 
 				{
@@ -316,7 +328,8 @@ class Search_fields {
 		// add search conditions
 		$sql = $sql.'AND ('.$sql_conditions.')';
 		
-		#echo $sql;
+		// echo $sql;
+		// die;
 		
 		$results = $this->EE->db->query($sql);
 		
